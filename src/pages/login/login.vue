@@ -75,8 +75,10 @@ export default {
         },
         async login() {
             try {
-                let data = await login(this.loginForm)
-                let token = data.token
+                // let data = await login(this.loginForm)
+                // let token = data.token || '123'
+                sessionStorage.setItem('username',this.loginForm.username)
+                let token = '123'
                 this.$store.commit('LOGIN_IN', token)
                 this.$router.replace('/')
             } catch (e) {

@@ -23,7 +23,6 @@
         </el-breadcrumb>
         <div class="aside__top--right">
             <div class="user-msg">
-                <img class="user-img" :src="avatar" alt="">
                 <span class="user-name">{{account}}</span>
                 <el-dropdown trigger="click" placement="top">
                     <span class="el-dropdown-link">
