@@ -19,7 +19,10 @@
 
             <el-button type="warning" size="small">订阅</el-button>
             <el-button type="primary" size="small" class="margin_r_16">批量订阅</el-button>
-            <el-link type="primary">批量订阅记录</el-link>
+            <el-link type="primary" class="margin_r_16">批量订阅记录</el-link>
+            <el-tooltip class="middle" effect="dark" content="上海港支持进出口数据及箱号订阅，其他港区进口数据及箱号订阅敬请期待" placement="top">
+                <i class="el-icon-info color_E6A23C"></i>
+            </el-tooltip>
         </div>
 
         <div v-if="showDetail">
@@ -201,7 +204,7 @@
                 <div class="padding_20">
                     <span> 录入员工：张三</span>
                     <span class="float_r margin_t-8">
-                    <span class="margin_r_80 color_67C23A">数据更新时间：2022-07-08 11:40</span>
+                    <span class="margin_r_80 color_00b26f">数据更新时间：2022-07-08 11:40</span>
                     <span>
                         <el-button type="text" disabled>取消提醒</el-button>
                         <el-button class="margin_r_16" type="text" disabled>设置提醒</el-button>

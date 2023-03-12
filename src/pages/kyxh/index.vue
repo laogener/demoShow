@@ -244,7 +244,7 @@
                 <div class="padding_20">
                     <span> 录入员工：张三</span>
                     <span class="float_r margin_t-8">
-                    <span class="margin_r_80 color_67C23A">数据更新时间：2022-07-08 11:34</span>
+                    <span class="margin_r_80 color_00b26f">数据更新时间：2022-07-08 11:34</span>
                     <span>
                         <el-button type="text" disabled>取消提醒</el-button>
                         <el-button class="margin_r_16" type="text" disabled>设置提醒</el-button>
