@@ -1,12 +1,10 @@
 <template>
-  <div class="demo-image__placeholder">
-    <div class="block">
+  <div>
       <el-image :src="src">
-      <div slot="placeholder" class="image-slot">
-        加载中<span class="dot">...</span>
-      </div>
-    </el-image>
-    </div>
+          <div slot="placeholder">
+              加载中<span class="dot">...</span>
+          </div>
+      </el-image>
   </div>
 </template>
 
@@ -14,8 +12,7 @@
 export default {
     data() {
         return {
-            src:
-                'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg'
+            src:require('@/assets/image/sy.jpeg')
         }
     }
 }
