@@ -1,8 +1,17 @@
+//重置css
 .input-with-select .el-input-group__prepend,
 .el-input-group__append, .el-input-group__prepend
 {
     background-color: #fff;
 }
+.el-descriptions-item__container .el-descriptions-item__content,
+.el-descriptions-item__container .el-descriptions-item__label{
+    font-weight: bolder;
+}
+.el-descriptions-item__container .el-descriptions-item__label{
+    color: #999;
+}
+
 
 
 .margin_0{
@@ -72,6 +81,7 @@
     font-weight: bolder;
 }
 .shadow{
+    border-radius: 4px;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)
 }
 .border_b
@@ -81,6 +91,19 @@
 .border_r
 {
     border-right: 1px solid #E8E8EE;
+}
+.border_t{
+    border-top: 1px solid #E8E8EE;
+}
+
+.relative{
+    position: relative;
+}
+.hidden{
+    overflow: hidden;
+}
+.overflow_x{
+    overflow-x: auto;
 }
 .pointer{
     cursor: pointer;
@@ -96,7 +119,14 @@
     overflow:hidden;
     white-space:nowrap;
 }
-
+.line1_2{
+    display: inline-block;
+    width: 110px;
+    vertical-align: text-bottom;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+}
 
 .color_0{
     color: #000;
@@ -107,7 +137,9 @@
 .color_409EFF{
     color: #409EFF;
 }
-
+.color_165dff{
+    color: #165dff;
+}
 
 .wd{
     width: 24px;
@@ -121,6 +153,14 @@
     top: -21px;
     right: 0;
 }
+.slsj2{
+    width: 138px;
+    position: absolute;
+    top: -21px;
+    left:50%;
+    margin-left: -69px;
+}
+
 //动态光晕
 .dtgy{
     display: inline-block;
@@ -152,4 +192,12 @@
         100% {transform: scale(6);}
     }
 }
-
+.tag {
+    position: absolute;
+    left: -12px;
+    top: -12px;
+    width: 24px;
+    height: 24px;
+    background-color: #155eff;
+    transform: rotate(45deg);
+}

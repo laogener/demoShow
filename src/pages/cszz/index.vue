@@ -1,9 +1,11 @@
 <template>
     <div class="padding_20">
-<!--        顶部搜索-->
+        <!--        顶部搜索-->
         <div class="margin_b_20">
-            <el-input size="small" class="margin_r_16" :placeholder="'请输入' + placeholder" style="width: 450px" v-model="queryData.a">
-                <el-select  @change="selectChange" v-model="queryData.b" slot="prepend" style="width: 130px" placeholder="请选择">
+            <el-input size="small" class="margin_r_16" :placeholder="'请输入' + placeholder" style="width: 450px"
+                      v-model="queryData.a">
+                <el-select @change="selectChange" v-model="queryData.b" slot="prepend" style="width: 130px"
+                           placeholder="请选择">
                     <el-option label="提单号" value="1"></el-option>
                     <el-option label="箱号" value="2"></el-option>
                     <el-option label="订舱号" value="3"></el-option>
@@ -23,38 +25,65 @@
         </div>
         <div v-if="showDetail">
             <div>
-                <el-button type="text"  @click="showDetail = !showDetail"><i class="el-icon-arrow-left"></i>返回</el-button>
+                <el-button type="text" @click="showDetail = !showDetail"><i class="el-icon-arrow-left"></i>返回
+                </el-button>
             </div>
-            <el-descriptions :column="4">
-                <el-descriptions-item label="提单号">6331817980</el-descriptions-item>
-                <el-descriptions-item label="订舱号">-</el-descriptions-item>
-                <el-descriptions-item label="船司">COSCO</el-descriptions-item>
-                <el-descriptions-item label="箱量">1*40HQ</el-descriptions-item>
-                <el-descriptions-item label="起运地">
-                    <el-tooltip class="item" effect="dark" content="Xingang,TJ,Tianjin,China" placement="top">
-                        <span class="line1">Xingang,TJ,Tianjin,China</span>
-                    </el-tooltip>
-                </el-descriptions-item>
-                <el-descriptions-item label="起运港">
-                    <el-tooltip class="item" effect="dark" content="Xingang-Tianjin Port Pacific Int'l Ctn Tml" placement="top">
-                        <span class="line1">Xingang-Tianjin Port Pacific Int'l Ctn Tml</span>
-                    </el-tooltip>
-                </el-descriptions-item>
-                <el-descriptions-item label="目的港">
-                    <el-tooltip class="item" effect="dark" content="Antwerp-Antwerp Gateway N.V. Quay 1700" placement="top">
-                        <span class="line1">Antwerp-Antwerp Gateway N.V. Quay 1700</span>
-                    </el-tooltip>
-                </el-descriptions-item>
-                <el-descriptions-item label="目的地">
-                    <el-tooltip class="item" effect="dark" content="Antwerp,Antwerpen,Belgium" placement="top">
-                        <span class="line1">Antwerp,Antwerpen,Belgium</span>
-                    </el-tooltip>
-                </el-descriptions-item>
-                <el-descriptions-item label="ETD">2022-04-30 23:00:00</el-descriptions-item>
-                <el-descriptions-item label="ATD">2022-04-30 20:30:00</el-descriptions-item>
-                <el-descriptions-item label="ETA">2022-06-10 15:00:00</el-descriptions-item>
-                <el-descriptions-item label="ATA">2022-06-10 14:14:00</el-descriptions-item>
-            </el-descriptions>
+            <div class="shadow margin_b_20">
+                <div class="top margin_b_20">
+                    <img class="slsj2" src="@/assets/image/slsj2.png" alt="">
+                </div>
+                <el-descriptions class="padding_20" :column="4">
+                    <el-descriptions-item label="提单号">6331817980</el-descriptions-item>
+                    <el-descriptions-item label="订舱号">-</el-descriptions-item>
+                    <el-descriptions-item label="船司">COSCO</el-descriptions-item>
+                    <el-descriptions-item label="箱量">1*40HQ</el-descriptions-item>
+                    <el-descriptions-item label="起运地">
+                        <el-tooltip class="item" effect="dark" content="Xingang,TJ,Tianjin,China" placement="top">
+                            <span class="line1">Xingang,TJ,Tianjin,China</span>
+                        </el-tooltip>
+                    </el-descriptions-item>
+                    <el-descriptions-item label="起运港">
+                        <el-tooltip class="item" effect="dark" content="Xingang-Tianjin Port Pacific Int'l Ctn Tml"
+                                    placement="top">
+                            <span class="line1">Xingang-Tianjin Port Pacific Int'l Ctn Tml</span>
+                        </el-tooltip>
+                    </el-descriptions-item>
+                    <el-descriptions-item label="目的港">
+                        <el-tooltip class="item" effect="dark" content="Antwerp-Antwerp Gateway N.V. Quay 1700"
+                                    placement="top">
+                            <span class="line1">Antwerp-Antwerp Gateway N.V. Quay 1700</span>
+                        </el-tooltip>
+                    </el-descriptions-item>
+                    <el-descriptions-item label="目的地">
+                        <el-tooltip class="item" effect="dark" content="Antwerp,Antwerpen,Belgium" placement="top">
+                            <span class="line1">Antwerp,Antwerpen,Belgium</span>
+                        </el-tooltip>
+                    </el-descriptions-item>
+                    <el-descriptions-item label="ETD">2022-04-30 23:00:00</el-descriptions-item>
+                    <el-descriptions-item label="ATD">2022-04-30 20:30:00</el-descriptions-item>
+                    <el-descriptions-item label="ETA">2022-06-10 15:00:00</el-descriptions-item>
+                    <el-descriptions-item label="ATA">2022-06-10 14:14:00</el-descriptions-item>
+                </el-descriptions>
+            </div>
+
+            <div class="margin_b_20 bolder size16">集装箱信息（1）</div>
+            <div class="shadow relative hidden">
+                <div class="tag"></div>
+                <div class="padding_20">
+                    <span class="margin_r_80 bolder">箱号：FFAU2752798</span>
+                    <span class="margin_r_80 bolder">箱型：40HQ</span>
+                    <span class="color_409EFF pointer" @click="hideDetail = !hideDetail">
+                      最新动态：
+                       <el-tooltip class="item" effect="dark" content="2022/06/23 10:59，还空，Global Container Services 1,Doel,Vlaanderen,Belgium" placement="top">
+                           <span class="line1">2022/06/23 10:59，还空，Global Container Services 1,Doel,Vlaanderen,Belgium</span>
+                       </el-tooltip>
+                        <i :class="hideDetail ? 'el-icon-caret-right' : 'el-icon-caret-bottom'"></i>
+                    </span>
+                </div>
+                <div class="padding_20 border_t box overflow_x" v-if="!hideDetail">
+                    <HorizonTimeLine :list="list2" :active="5" :moreLine="true"/>
+                </div>
+            </div>
         </div>
         <div v-else>
             <div class="margin_b_20 size16 bolder">订阅示例</div>
@@ -165,7 +194,7 @@
                 </div>
                 <div class="text_c">
                 <span class="pointer" @click="showQuery = !showQuery">
-                    {{ showQuery ? '收起' : '展开'}}筛选项
+                    {{ showQuery ? '收起' : '展开' }}筛选项
                     <i class="el-icon-d-arrow-left" :class="{'rotate_90':!showQuery}"></i>
                 </span>
                 </div>
@@ -178,28 +207,28 @@
                     <img class="slsj" src="@/assets/image/slsj.png" alt="">
                 </div>
                 <div class="padding_20 border_b">
-                    <div>
                     <span class="margin_r_80">
                         <el-checkbox class="margin_r_4" disabled></el-checkbox>
                         提单号：COSU6331817980
                     </span>
-                        <span>
+                    <span>
                         <el-radio class="margin_0"></el-radio>
                         <span>
                             起运港：
-                            <el-tooltip class="item" effect="dark" content="Xingang-Tianjin Port Pacific Int'l Ctn Tml" placement="top">
+                            <el-tooltip class="item" effect="dark" content="Xingang-Tianjin Port Pacific Int'l Ctn Tml"
+                                        placement="top">
                              <span class="line1">Xingang-Tianjin Port Pacific Int'l Ctn Tml</span>
                             </el-tooltip>
                         </span>
                         <span class="middleLine"></span>
                         <span>
                             目的港：
-                            <el-tooltip class="item" effect="dark" content="Antwerp-Antwerp Gateway N.V. Quay 1700" placement="top">
+                            <el-tooltip class="item" effect="dark" content="Antwerp-Antwerp Gateway N.V. Quay 1700"
+                                        placement="top">
                              <span class="line1">Antwerp-Antwerp Gateway N.V. Quay 1700</span>
                             </el-tooltip>
                         </span>
                     </span>
-                    </div>
                 </div>
                 <el-row class="padding_20 border_b">
                     <el-col :span="4" class="border_r padding_r_10">
@@ -207,8 +236,8 @@
                         <div class="margin_b_10">船名：THALASSA AVRA</div>
                         <div class="margin_b_10">航次：0600-041W</div>
                     </el-col>
-                    <el-col :span="20" class="padding_l_20">
-                        <HorizonTimeLine :list="list" :active="7" />
+                    <el-col :span="20" class="padding_l_20 overflow_x">
+                        <HorizonTimeLine :list="list" :active="7"/>
 
                     </el-col>
                 </el-row>
@@ -219,7 +248,8 @@
                     <span>
                         <el-button type="text" disabled>取消提醒</el-button>
                         <el-button class="margin_r_16" type="text" disabled>设置提醒</el-button>
-                        <el-button type="text"  @click="showDetail = !showDetail">详情<i class="el-icon-arrow-right"></i></el-button>
+                        <el-button type="text" @click="showDetail = !showDetail">详情<i
+                            class="el-icon-arrow-right"></i></el-button>
                     </span>
                 </span>
                 </div>
@@ -233,6 +263,7 @@
 <script>
 
 import HorizonTimeLine from '@/components/HorizonTimeLine'
+
 export default {
     data() {
         return {
@@ -320,7 +351,41 @@ export default {
                     standard: '1/1箱',
                 },
             ],
-            showDetail:false,
+            showDetail: false,
+            hideDetail: false,
+            list2: [
+                {
+                    warnname: "还空",
+                    standard: 'Global Container Services 1,Doel,Vlaanderen,Belgium',
+                    time: '2022/06/23 10:59',
+                },
+                {
+                    warnname: "提货",
+                    standard: 'Antwerp Gateway N.V. Quay 1700,Antwerp,Vlaanderen,Belgium',
+                    time: '2022/06/21 10:25',
+                },
+                {
+                    warnname: "卸载",
+                    standard: 'Antwerp Gateway N.V. Quay 1700,Antwerp,Vlaanderen,Belgium',
+                    time: '2022/06/12 01:16',
+                },
+                {
+                    warnname: "装船",
+                    standard: 'Tianjin Port Pacific Int\'l Ctn Tml,Xingang,Tianjin,China',
+                    time: '2022/04/30 18:00',
+                },
+                {
+                    warnname: "进场",
+                    standard: 'Tianjin Port Pacific Int\'l Ctn Tml,Xingang,Tianjin,China',
+                    time: '2022/04/27 11:51',
+                },
+                {
+                    warnname: "提箱",
+                    standard: 'Tianjin Binhai Cosco, Earth Port,Xingang,Tianjin,China',
+                    time: '2022/04/22 07:26',
+                },
+
+            ],
         }
     },
     created() {
@@ -355,26 +420,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .el-icon-d-arrow-left{
-        transform: rotate(90deg);
-    }
-    .rotate_90{
-        transform: rotate(-90deg);
-    }
-    .top{
-        position: relative;
-        border-top: 2px solid #168BE8;
-    }
-    .middleLine{
-        display: inline-block;
-        position: relative;
-        top: -5px;
-        width: 40px;
-        height: 1px;
-        background-color: #d8d8d8;
-        margin: 0 20px;
-    }
+.el-icon-d-arrow-left {
+    transform: rotate(90deg);
+}
 
+.rotate_90 {
+    transform: rotate(-90deg);
+}
 
+.top {
+    position: relative;
+    border-top: 2px solid #168BE8;
+    border-radius: 4px;
+}
+
+.middleLine {
+    display: inline-block;
+    position: relative;
+    top: -5px;
+    width: 40px;
+    height: 1px;
+    background-color: #d8d8d8;
+    margin: 0 20px;
+}
+.box{
+    padding-bottom: 40px;
+}
 
 </style>
