@@ -46,6 +46,8 @@ module.exports = {
     // 调整内部的 webpack 配置。
     // 查阅 https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli/webpack.md
     chainWebpack: config => {
+        config.resolve.alias
+            .set('@', resolve('src'))
         // 移除 prefetch 插件,解决组件懒加载失效的问题
         config.plugins.delete('prefetch')
         // 添加新的svg-sprite-loader处理svgIcon

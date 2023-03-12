@@ -11,7 +11,8 @@
             class='iconfont'
             :class='v.meta.icon'
           ></i> -->
-          <svg-icon v-if="v.meta&&v.meta.icon" :icon-class="v.meta.icon"></svg-icon>
+<!--          <svg-icon v-if="v.meta&&v.meta.icon" :icon-class="v.meta.icon"></svg-icon>-->
+            <i class="svg-icon" v-if="v.meta&&v.meta.icon" :class="v.meta.icon"></i>
           <span>{{v.meta.name}}</span>
         </template>
         <el-menu-item-group>
@@ -28,7 +29,8 @@
           class='iconfont'
           :class='v.meta.icon'
         ></i> -->
-        <svg-icon v-if="v.meta&&v.meta.icon" :icon-class="v.meta.icon"></svg-icon>
+<!--        <svg-icon v-if="v.meta&&v.meta.icon" :icon-class="v.meta.icon"></svg-icon>-->
+          <i class="svg-icon" v-if="v.meta&&v.meta.icon" :class="v.meta.icon"></i>
         <span slot='title'>{{v.meta.name}}</span>
       </el-menu-item>
     </template>
@@ -58,6 +60,7 @@ export default {
 .menu-container {
   .svg-icon{
     margin-right:10px;
+      color: rgb(238, 238, 238);
   }
 }
 </style>
